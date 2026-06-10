@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//cdn.toolkit.illinois.edu">
+    <link rel="dns-prefetch" href="//cdn.brand.illinois.edu">
+    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css">
+    <script type="module" src="//cdn.toolkit.illinois.edu/3/toolkit.js"></script>
+    <title>Chatbot</title>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script src="chatbot.js?id=2"></script>
+    <link rel="stylesheet" href="chatbot.css?id=2"></script>
+    <script>
+      generateEndpoint('');
+      generateBotAndUserImages('bot.png', 'user.png');
+    </script>
+</head>
+<body style="margin: 0;">
+<ilw-page class="ilw-font">
+    <ilw-header slot="header">
+        <a slot="site-name" href="/index.html">Test Chatbot</a>
+    </ilw-header>
+    <main>
+        <ilw-card style="max-width: 500px; margin: 30px auto;" clickable="true"><h3><a href="#" onclick="showChat(); return false;">Test the chatbot</a></h3>
+        <p>We are training a new chatbot to help answer your questions. Give it a try</p>
+        </ilw-card>
+    </main>
+    <ilw-footer slot="footer">
+        <a slot="site-name" href="/index.html">Test Chatbot</a>
+        <button style="display: none;" slot="cookies-button"></button>
+    </ilw-footer>
+</ilw-page>
+<!-- Chatbot button BEGIN -->
+<div id="chatbot-popup" role="complementary" aria-label="Chat Assistant">
+  <div id="chatbot-header">
+    <div class="header-title">
+      <svg class="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <span>Test Chatbot</span>
+    </div>
+    <div class="header-buttons">
+      <button class="icon-button" id="restart-button" onclick="restartConversation()" aria-label="Restart Conversation">
+        <svg  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  aria-hidden="true">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+          <path d="M3 3v5h5"></path>
+        </svg>
+      </button>
+      <button class="icon-button" id="close-button" onclick="hideChat()" aria-label="Close Chat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="webchat" role="main"></div>
+</div>
+<button id="open-chat" onclick="showChat()" aria-label="Open Chat Assistant" role="complementary">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+</button>
+<!-- Chatbot button END -->
+</body>
+</html>

@@ -1,0 +1,174 @@
+    :root {
+      --chat-width: 450px;
+      --chat-height: 620px;
+      --header-height: 36px;
+      --border-radius: 16px;
+      --transition-speed: 0.3s;
+      --header-textColor: white;
+    }
+    #chatbot-popup {
+      display: none;
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: var(--chat-width);
+      height: var(--chat-height);
+      background: transparent;
+      border-radius: var(--border-radius);
+      box-shadow: 0 18px 40px -5px rgba(0, 0, 0, 0.2),
+        0 15px 20px -5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      opacity: 0;
+      transform-origin: bottom right;
+      transform: scale(0.95);
+      transition: all var(--transition-speed) ease-in-out;
+      z-index: 999;
+    }
+    #chatbot-popup.visible {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+    #chatbot-header {
+      background: var(--il-blue);
+      padding: 16px 20px;
+      height: var(--header-height);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--header-textColor);
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font: 600 1rem / 1.25rem var(--il-font-sans);
+    }
+    .header-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .icon-button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .icon-button:hover {
+      color: var(--il-orange);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .icon-button:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+      color: var(--il-orange);
+    }
+    #webchat {
+      height: calc(100% - var(--header-height) - 36px);
+      background-color: #f9fafb;
+      position: relative;
+      font: 400 1rem / 1.25rem var(--il-font-sans);
+    }
+    .webchat-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.85);
+      pointer-events: none;
+      z-index: 1;
+    }
+    #webchat > div {
+      position: relative;
+      z-index: 2;
+    }
+    #webchat .webchat__basic-transcript__content {
+      white-space: pre-wrap !important;
+      word-break: break-word !important;
+    }
+    #webchat .webchat__bubble__content {
+      padding: 8px 12px !important;
+    }
+    #webchat .webchat__bubble {
+      max-width: 85% !important;
+      margin: 8px !important;
+    }
+    #webchat .webchat__basic-transcript__content ul,
+    #webchat .webchat__basic-transcript__content ol,
+    #webchat .webchat__bubble__content ul,
+    #webchat .webchat__bubble__content ol {
+      padding-left: 24px !important;
+      margin: 8px 0 !important;
+      list-style-position: outside !important;
+    }
+    #webchat .webchat__basic-transcript__content li,
+    #webchat .webchat__bubble__content li {
+      margin: 4px 0 !important;
+      padding-left: 4px !important;
+    }
+    #open-chat {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--il-blue);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all var(--transition-speed) ease-in-out;
+      z-index: 998;
+      outline: 2px white solid;
+    }
+    #open-chat.hidden {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+      pointer-events: none;
+    }
+    #open-chat:hover {
+      background: var(--il-altgeld);
+    }
+    #open-chat:focus {
+      background: var(--il-altgeld);
+      outline: 3px solid rgba(79, 70, 229, 0.5);
+      outline-offset: 2px;
+    }
+    #open-chat svg {
+      width: 28px;
+      height: 28px;
+      color: white;
+      transition: transform 0.2s ease;
+    }
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .content-box.featured {
+        grid-column: span 1;
+      }
+      .main-content {
+        padding: 24px 16px;
+      }
+      .main-content h1 {
+        font-size: 28px;
+      }
+      #chatbot-popup {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
