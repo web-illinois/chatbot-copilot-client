@@ -31,9 +31,9 @@ You get the endpoint by going to Copilot Studio Agent and choosing Channels --> 
 
 ![Screenshot of the email section of the Copilot Studio](image.png)
 
-Put this in the `data-endpoint` attribute in the `<div>` tag. 
+Put this endpoint in the `data-endpoint` attribute in the `<div>` tag. 
 
-For `data-bot-image` and `data-user-image`, you can include paths to images. If you delete these attributes, it will default to generic images.
+For `data-bot-image` and `data-user-image` attributes, you can include paths to images. If you delete these attributes, it will default to generic images.
 
 ### Resources
 
