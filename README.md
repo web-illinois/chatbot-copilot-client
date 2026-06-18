@@ -15,14 +15,14 @@ This was generated as part of the IT ProForum 2026 presentation. Links are at:
 index.html needs to have the following:
 ```
     <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
-    <script src="chatbot.js"></script>
-    <link rel="stylesheet" href="chatbot.css"></script>
+    <script src="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.js"></script>
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.css"></script>
 ```
 
 Then in the body where you want the button, add this:
 ```
 <div id="illinois-webchat" role="none"
-     data-endpoint=""
+     data-endpoint="[insert endpoint]"
      data-bot-image=""
      data-user-image=""></div>
 ```
@@ -34,6 +34,13 @@ You get the endpoint by going to Copilot Studio Agent and choosing Channels --> 
 Put this endpoint in the `data-endpoint` attribute in the `<div>` tag. 
 
 For `data-bot-image` and `data-user-image` attributes, you can include paths to images. If you delete these attributes, it will default to generic images.
+
+Example (note that we have a custom bot image but a default user image):
+```
+<div id="illinois-webchat" role="none"
+     data-endpoint="https://default000000000000000000000000000000000.e3.environment.api.powerplatform.com/powervirtualagents/botsbyschema/cr29b_xxxxxx/directline/token?api-version=2022-03-01-preview"
+     data-bot-image="/img/bot.png"></div>
+```
 
 ### Resources
 
