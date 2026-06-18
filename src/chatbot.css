@@ -10,7 +10,7 @@
       display: none;
       position: fixed;
       bottom: 32px;
-      right: 32px;
+      right: 92px;
       width: var(--chat-width);
       height: var(--chat-height);
       background: transparent;
