@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//cdn.toolkit.illinois.edu">
+    <link rel="dns-prefetch" href="//cdn.brand.illinois.edu">
+    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css">
+    <script type="module" src="//cdn.toolkit.illinois.edu/3/toolkit.js"></script>
+    <title>Chatbot</title>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script src="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.js"></script>
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.css"></script>
+</head>
+<body style="margin: 0;">
+<ilw-page class="ilw-font">
+    <ilw-header slot="header">
+        <a slot="site-name" href="/index.html">Test Chatbot</a>
+    </ilw-header>
+    <main>
+        <ilw-card style="max-width: 500px; margin: 30px auto;" clickable="true"><h3><a href="#" onclick="showChat(); return false;">Test the chatbot</a></h3>
+        <p>We are training a new chatbot to help answer your questions. Give it a try</p>
+        </ilw-card>
+    </main>
+    <ilw-footer slot="footer">
+        <a slot="site-name" href="/index.html">Test Chatbot</a>
+        <button style="display: none;" slot="cookies-button"></button>
+    </ilw-footer>
+</ilw-page>
+<!-- Chatbot button BEGIN -->
+<div id="illinois-webchat" role="none"
+     data-endpoint="" 
+     data-bot-image="" 
+     data-user-image=""></div>
+<!-- Chatbot button END -->
+</body>
+</html>
