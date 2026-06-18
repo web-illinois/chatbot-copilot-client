@@ -6,23 +6,24 @@ This was generated as part of the IT ProForum 2026 presentation. Links are at:
 * https://itproforum.illinois.edu/eventdesc/1-spring-2026/1-1pm/from-idea-to-agent-building-your-first-chatbot-with-copilot-studio/
 * https://go.illinois.edu/itpf2026-resources
 
-## Files
+## Files in /src directory
 
-* index.html: template that has the chatbot information
 * chatbot.js: JavaScript that contains chatbot connection information
 * chatbot.css: CSS style that contains chatbot styling
 
-index.html needs to have the following:
+## How to set up
+
+Your HTML file needs needs to have the following in the head tag:
 ```
     <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
-    <script src="chatbot.js"></script>
-    <link rel="stylesheet" href="chatbot.css"></script>
+    <script src="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.js"></script>
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.css"></script>
 ```
 
 Then in the body where you want the button, add this:
 ```
 <div id="illinois-webchat" role="none"
-     data-endpoint=""
+     data-endpoint="[insert endpoint]"
      data-bot-image=""
      data-user-image=""></div>
 ```
@@ -35,9 +36,17 @@ Put this endpoint in the `data-endpoint` attribute in the `<div>` tag.
 
 For `data-bot-image` and `data-user-image` attributes, you can include paths to images. If you delete these attributes, it will default to generic images.
 
+Example (note that we have a custom bot image but a default user image):
+```
+<div id="illinois-webchat" role="none"
+     data-endpoint="https://default000000000000000000000000000000000.e3.environment.api.powerplatform.com/powervirtualagents/botsbyschema/cr29b_xxxxxx/directline/token?api-version=2022-03-01-preview"
+     data-bot-image="/img/bot.png"></div>
+```
+
 ### Resources
 
 * https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-webchat-overview?view=azure-bot-service-4.0 
+* https://uofi.app.box.com/s/qa548vopkunb0aolpri0yb8uml5wu5d1 -- the campus Agent Blueprint Worksheet
 
 ## Activation
 
