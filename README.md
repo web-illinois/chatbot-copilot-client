@@ -12,7 +12,7 @@ This was generated as part of the IT ProForum 2026 presentation. Links are at:
 * chatbot.js: JavaScript that contains chatbot connection information
 * chatbot.css: CSS style that contains chatbot styling
 
-index.html needs to have the following:
+index.html needs to have the following in the head tag:
 ```
     <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
     <script src="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.js"></script>
