@@ -6,13 +6,14 @@ This was generated as part of the IT ProForum 2026 presentation. Links are at:
 * https://itproforum.illinois.edu/eventdesc/1-spring-2026/1-1pm/from-idea-to-agent-building-your-first-chatbot-with-copilot-studio/
 * https://go.illinois.edu/itpf2026-resources
 
-## Files
+## Files in /src directory
 
-* index.html: template that has the chatbot information
 * chatbot.js: JavaScript that contains chatbot connection information
 * chatbot.css: CSS style that contains chatbot styling
 
-index.html needs to have the following in the head tag:
+## How to set up
+
+Your HTML file needs needs to have the following in the head tag:
 ```
     <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
     <script src="//cdn.toolkit.illinois.edu/illinois-webchat/latest/chatbot.js"></script>
@@ -45,6 +46,7 @@ Example (note that we have a custom bot image but a default user image):
 ### Resources
 
 * https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-webchat-overview?view=azure-bot-service-4.0 
+* https://uofi.app.box.com/s/qa548vopkunb0aolpri0yb8uml5wu5d1 -- the campus Agent Blueprint Worksheet
 
 ## Activation
 
