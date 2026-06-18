@@ -20,9 +20,6 @@ jobs:
     - name: Display version install
       run: echo "Installing production version ${VERSION}"
 
-    - run: npm install
-    - run: npm rebuild
-    - run: npm run-script build
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -31,6 +28,6 @@ jobs:
         aws-region: us-east-2
 
     - name: Deploy illinois-webchat to S3 bucket for version
-      run: aws s3 sync ./dist/ s3://cdn.toolkit.illinois.edu/content/illinois-webchat/$VERSION --delete --acl bucket-owner-full-control 
+      run: aws s3 sync ./src/ s3://cdn.toolkit.illinois.edu/content/illinois-webchat/$VERSION --delete --acl bucket-owner-full-control 
     - name: Invalidate illinois-webchat Cloudfront cache for version
       run: aws cloudfront create-invalidation --distribution-id ${{ vars.TOOLKIT_AWS_CLOUDFRONT }} --paths "/illinois-webchat/$VERSION*"
