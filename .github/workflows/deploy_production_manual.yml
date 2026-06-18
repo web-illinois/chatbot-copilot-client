@@ -29,5 +29,9 @@ jobs:
 
     - name: Deploy illinois-webchat to S3 bucket for version
       run: aws s3 sync ./src/ s3://cdn.toolkit.illinois.edu/content/illinois-webchat/$VERSION --delete --acl bucket-owner-full-control 
+    - name: Deploy illinois-webchat to S3 bucket for latest
+      run: aws s3 sync ./src/ s3://cdn.toolkit.illinois.edu/content/illinois-webchat/latest --delete --acl bucket-owner-full-control 
     - name: Invalidate illinois-webchat Cloudfront cache for version
       run: aws cloudfront create-invalidation --distribution-id ${{ vars.TOOLKIT_AWS_CLOUDFRONT }} --paths "/illinois-webchat/$VERSION*"
+    - name: Invalidate illinois-webchat Cloudfront cache for latest
+      run: aws cloudfront create-invalidation --distribution-id ${{ vars.TOOLKIT_AWS_CLOUDFRONT }} --paths "/illinois-webchat/latest*"
