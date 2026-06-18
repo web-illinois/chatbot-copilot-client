@@ -172,3 +172,7 @@
         border-radius: 0;
       }
     }
+    .webchat__typing-indicator {
+    background-position: 0;
+    background-size: cover;
+    }
