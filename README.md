@@ -11,19 +11,29 @@ This was generated as part of the IT ProForum 2026 presentation. Links are at:
 * index.html: template that has the chatbot information
 * chatbot.js: JavaScript that contains chatbot connection information
 * chatbot.css: CSS style that contains chatbot styling
-* bot.png, user.png: sample graphic files to show up in the chatbot
 
 index.html needs to have the following:
 ```
-    <script>
-      generateEndpoint(' ** token endpoint here ** ');
-      generateBotAndUserImages(' ** bot image here ** ', ' ** user image here ** ');
-    </script>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script src="chatbot.js"></script>
+    <link rel="stylesheet" href="chatbot.css"></script>
+```
+
+Then in the body where you want the button, add this:
+```
+<div id="illinois-webchat" role="none"
+     data-endpoint=""
+     data-bot-image=""
+     data-user-image=""></div>
 ```
 
 You get the endpoint by going to Copilot Studio Agent and choosing Channels --> Email. Copy the token endpoint for this. 
 
 ![Screenshot of the email section of the Copilot Studio](image.png)
+
+Put this in the `data-endpoint` attribute in the `<div>` tag. 
+
+For `data-bot-image` and `data-user-image`, you can include paths to images. If you delete these attributes, it will default to generic images.
 
 ### Resources
 
