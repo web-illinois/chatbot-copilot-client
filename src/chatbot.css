@@ -1,6 +1,6 @@
     :root {
       --chat-width: 450px;
-      --chat-height: 620px;
+      --chat-height: 580px;
       --header-height: 36px;
       --border-radius: 16px;
       --transition-speed: 0.3s;
@@ -22,7 +22,7 @@
       transform-origin: bottom right;
       transform: scale(0.95);
       transition: all var(--transition-speed) ease-in-out;
-      z-index: 999;
+      z-index: 2000;
     }
     #chatbot-popup.visible {
       display: block;
