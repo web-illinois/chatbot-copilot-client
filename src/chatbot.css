@@ -5,7 +5,7 @@
       --chat-border-radius: 16px;
       --chat-transition-speed: 0.3s;
       --chat-header-textColor: white;
-      --chat-button-right: 32px;
+      --chat-button-right: 92px;
       --chat-button-bottom: 32px;
       --chat-color: var(--il-blue);
       --chat-color-hover: var(--il-altgeld); 
@@ -26,7 +26,7 @@
       transform-origin: bottom right;
       transform: scale(0.95);
       transition: all var(--chat-transition-speed) ease-in-out;
-      z-index: 999;
+      z-index: 2000;
     }
     #chatbot-popup.visible {
       display: block;
@@ -175,4 +175,8 @@
         right: 0;
         border-radius: 0;
       }
+    }
+    .webchat__typing-indicator {
+    background-position: 0;
+    background-size: cover;
     }
