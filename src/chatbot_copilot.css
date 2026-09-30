@@ -1,0 +1,116 @@
+:root {
+  --chat-heading-height: 65px;
+  --chat-button-right: 32px;
+  --chat-button-bottom: 32px;
+  --chat-color: var(--il-blue);
+  --chat-color-hover: var(--il-altgeld); 
+  --chat-transition-speed: 0.3s;
+}
+
+#open-chat {
+  position: fixed;
+  bottom: var(--chat-button-bottom);
+  right: var(--chat-button-right);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--chat-color);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all var(--chat-transition-speed) ease-in-out;
+  z-index: 998;
+  outline: 2px white solid;
+}
+
+#open-chat:focus {
+    background: var(--chat-color-hover);
+    outline: 3px solid rgba(79, 70, 229, 0.5);
+    outline-offset: 2px;
+}
+#open-chat:hover {
+    background: var(--chat-color-hover);
+}
+
+#open-chat svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+#copilot-wrapper {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  background: white;
+}
+
+.copilot-popup {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 10000;
+  display: none;
+  flex-direction: column;
+  width: min(400px, calc(100vw - 32px));
+  height: min(650px, calc(100vh - 128px));
+  overflow: hidden;
+  border: 1px solid #d1d1d1;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 28%);
+}
+
+.copilot-popup[data-open="true"] {
+  display: flex;
+}
+
+.copilot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 0 10px 0 18px;
+  background: var(--il-blue);
+  color: #fff;
+  font: 600 16px system-ui, sans-serif;
+}
+
+.copilot-close {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.copilot-frame {
+  position: absolute;
+  top: calc(-1 * var(--chat-heading-height));
+  left: 0;
+  width: 100%;
+  height: calc(100% + var(--chat-heading-height));
+  border: 0;
+}
+
+@media (max-width: 520px) {
+  :root {
+    --chat-button-right: 16px;
+    --chat-button-bottom: 16px;
+  }
+
+  .copilot-popup {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+}

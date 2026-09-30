@@ -1,27 +1,31 @@
     :root {
       --chat-width: 450px;
       --chat-height: 620px;
-      --header-height: 36px;
-      --border-radius: 16px;
-      --transition-speed: 0.3s;
-      --header-textColor: white;
+      --chat-header-height: 36px;
+      --chat-border-radius: 16px;
+      --chat-transition-speed: 0.3s;
+      --chat-header-textColor: white;
+      --chat-button-right: 32px;
+      --chat-button-bottom: 32px;
+      --chat-color: var(--il-blue);
+      --chat-color-hover: var(--il-altgeld); 
     }
     #chatbot-popup {
       display: none;
       position: fixed;
-      bottom: 32px;
-      right: 32px;
+      bottom: var(--chat-button-bottom);
+      right: var(--chat-button-right);
       width: var(--chat-width);
       height: var(--chat-height);
       background: transparent;
-      border-radius: var(--border-radius);
+      border-radius: var(--chat-border-radius);
       box-shadow: 0 18px 40px -5px rgba(0, 0, 0, 0.2),
         0 15px 20px -5px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       opacity: 0;
       transform-origin: bottom right;
       transform: scale(0.95);
-      transition: all var(--transition-speed) ease-in-out;
+      transition: all var(--chat-transition-speed) ease-in-out;
       z-index: 999;
     }
     #chatbot-popup.visible {
@@ -30,13 +34,13 @@
       transform: scale(1);
     }
     #chatbot-header {
-      background: var(--il-blue);
+      background: var(--chat-color);
       padding: 16px 20px;
-      height: var(--header-height);
+      height: var(--chat-header-height);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: var(--header-textColor);
+      color: var(--chat-header-textColor);
     }
     .header-title {
       display: flex;
@@ -59,19 +63,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s ease;
+      transition: all var(--chat-transition-speed) ease;
     }
     .icon-button:hover {
-      color: var(--il-orange);
+      color: var(--chat-color-hover);
       background: rgba(255, 255, 255, 0.1);
     }
     .icon-button:focus {
       outline: 2px solid rgba(255, 255, 255, 0.5);
       outline-offset: 2px;
-      color: var(--il-orange);
+      color: var(--chat-color-hover);
     }
     #webchat {
-      height: calc(100% - var(--header-height) - 36px);
+      height: calc(100% - var(--chat-header-height) - 36px);
       background-color: #f9fafb;
       position: relative;
       font: 400 1rem / 1.25rem var(--il-font-sans);
@@ -116,19 +120,19 @@
     }
     #open-chat {
       position: fixed;
-      bottom: 32px;
-      right: 32px;
+      bottom: var(--chat-button-bottom);
+      right: var(--chat-button-right);
       width: 64px;
       height: 64px;
       border-radius: 50%;
-      background: var(--il-blue);
+      background: var(--chat-color);
       border: none;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: all var(--transition-speed) ease-in-out;
+      transition: all var(--chat-transition-speed) ease-in-out;
       z-index: 998;
       outline: 2px white solid;
     }
@@ -138,10 +142,10 @@
       pointer-events: none;
     }
     #open-chat:hover {
-      background: var(--il-altgeld);
+      background: var(--chat-color-hover);
     }
     #open-chat:focus {
-      background: var(--il-altgeld);
+      background: var(--chat-color-hover);
       outline: 3px solid rgba(79, 70, 229, 0.5);
       outline-offset: 2px;
     }

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//cdn.toolkit.illinois.edu">
+    <link rel="dns-prefetch" href="//cdn.brand.illinois.edu">
+    <link rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+    <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css">
+    <script type="module" src="//cdn.toolkit.illinois.edu/3/toolkit.js"></script>
+    <title>Chatbot (powered by GitHub Copilot)</title>
+    <script src="chatbot_copilot.js?id=2"></script>
+    <link rel="stylesheet" href="chatbot_copilot.css?id=2">
+    <script>
+      generateEndpoint('Sample JS Chatbot','https://copilotstudio.microsoft.com/environments/Default-44467e6f-462c-4ea2-823f-7800de5434e3/bots/cr29b_sampleagent_bBXsXX/webchat?__version__=2&enableFileAttachment=false&cliAgent=true');
+    </script>
+</head>
+
+<body>
+<ilw-page class="ilw-font">
+    <ilw-header slot="header">
+        <a slot="site-name" href="/index.html">Test Chatbot</a>
+    </ilw-header>
+    <main>
+        <ilw-card style="max-width: 500px; margin: 30px auto;" clickable="true"><h3><a href="#" onclick="showChat(); return false;">Test the chatbot</a></h3>
+        <p>We are training a new chatbot to help answer your questions. Give it a try</p>
+        </ilw-card>
+    </main>
+    <ilw-footer slot="footer">
+        <a slot="site-name" href="/index.html">Test Chatbot</a>
+        <button style="display: none;" slot="cookies-button"></button>
+    </ilw-footer>
+</ilw-page>
+
+</body>
+</html>
