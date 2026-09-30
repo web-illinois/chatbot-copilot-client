@@ -100,7 +100,7 @@ You can start the chatbot by calling `showChat()` on a button click. Note that w
 We have some variables you can manipulate:
 
 * --chat-heading-height: 65px;
-* --chat-button-right: 32px;
+* --chat-button-right: 104px;
 * --chat-button-bottom: 32px;
 * --chat-color: var(--il-blue);
 * --chat-color-hover: var(--il-altgeld); 
