@@ -2,7 +2,7 @@ let chaturl = '';
 let chattitle = '';
 function generateEndpoint(title, url) {
   chattitle = title;
-  chaturl = url;
+  chaturl = url.replace('canvas?', 'webchat?');
 }
 
 (() => {
