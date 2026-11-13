@@ -115,3 +115,15 @@ We have some variables you can manipulate:
 * --chat-color: var(--il-blue);
 * --chat-color-hover: var(--il-altgeld); 
 * --chat-transition-speed: 0.3s;
+*  --chat-button-text-width: 200px;
+*  --chat-button-text-alignment: center;
+
+
+For example:
+
+```
+:root {
+*  --chat-button-text-width: 260px;
+*  --chat-button-text-alignment: left;
+}
+```
