@@ -99,6 +99,10 @@
         generateEndpoint(dataEndpoint);
         generateBotAndUserImages(botImage, userImage);
 
+        const svgButton = node.hasAttribute('data-bot-image') ? `<img src='${node.getAttribute('data-bot-image')}' alt='' style='height: 50px; width: 50px;'>` : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>`;
+
         node.innerHTML = `<div id="chatbot-popup" role="complementary" aria-label="${botTitle}">
   <div id="chatbot-header">
     <div class="header-title">
@@ -109,7 +113,7 @@
     </div>
     <div class="header-buttons">
       <button class="icon-button" id="restart-button" onclick="restartConversation()" aria-label="Restart Conversation">
-        <svg  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  aria-hidden="true">
+        <svg width="20"  height="20"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
           <path d="M3 3v5h5"></path>
         </svg>
@@ -125,9 +129,7 @@
   <div id="webchat" role="main"></div>
 </div>
 <button id="open-chat" onclick="showChat()" aria-label="Open Chat Assistant" role="complementary">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-  </svg>
+${svgButton}
 </button>
 `;
 
